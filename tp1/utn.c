@@ -4,7 +4,7 @@
 
 
 
-
+//FUNCION SUMAR
 opsumar (float num1, float num2)
 
 {
@@ -17,7 +17,7 @@ opsumar (float num1, float num2)
 	printf ("El resultado de %f+%f es: %f\n", num1,num2,resultado);
 }
 
-
+//FUNCION RESTAR
 oprestar (float num1, float num2)
 {
 	
@@ -29,6 +29,7 @@ oprestar (float num1, float num2)
 	printf ("El resultado de %f-%f es: %f\n", num1,num2,resultado);
 }
 
+//FUNCION MULTIPLICAR
 opmultiplicar (float num1, float num2)
 {
 	
@@ -40,6 +41,8 @@ opmultiplicar (float num1, float num2)
 	printf ("El resultado de %f*%f es: %f\n", num1,num2,resultado);
 }
 
+
+//FUNCION DIVIVIR
 opdividir (float num1, float num2, float*presultado)
 {
 	
@@ -62,15 +65,21 @@ opdividir (float num1, float num2, float*presultado)
 	
 }
 
+
+//FUNCION FACTORIAL A
 opfactorialA (float num1,float* presultado)
 {
 	int i;
 	float resultado =1;
 	int respuesta =-1;
-	
-if (num1 ==(int)num1 && presultado !=NULL)
+	int num1entero = (int) num1;
+	float decimales = num1-num1entero;
+//valido que numero ingresado sea mayor que 0
+//valido que en la direccion de memoria haya un valor
+//si el resultado es no 0, es porque es un numero entero.	
+if (num1 >0 && presultado !=NULL  && (decimales==0))
 {
-	for (i=1;i<num1;i++)
+	for (i=1;i<=num1;i++)
 	 {
 	 	resultado *=i;
 	 	
@@ -86,17 +95,22 @@ else
 }
 
 
-
+//FUNCION FACTORIAL B
 opfactorialB (float num2,float* presultado)
 {
 	
 	int i;
 	float resultado =1;
 	int respuesta =-1;
-	
-if (num2 ==(int)num2 && presultado !=NULL)
+	int num1entero = (int) num2;
+	float decimales = num2-num1entero;
+//valido que numero ingresado sea mayor que 0
+//valido que en la direccion de memoria haya un valor
+//si el resultado es no 0, es porque es un numero entero.		
+if (num2 >0 && presultado !=NULL && decimales == 0)
 {
-	for (i=1;i<num2;i++)
+	
+	for (i=1;i<=num2;i++)
 	 {
 	 	resultado *=i;
 	 	
@@ -144,65 +158,3 @@ else
 
 
 
-
-
-int  utn_getNumero ( int * pResultado, char * mensaje, char * mensajeError, int minimo, int maximo, int reintentos)
-{
-	int retorno = - 1 ;
-	int bufferInt;
-	if (pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >= 0 )
-	{
-		do
-		{
-			printf ( " % s " , mensaje);
-			fflush (stdin);
-			scanf ( " % d " , & bufferInt);
-			if (bufferInt >= minimo && bufferInt <= maximo)
-			{
-				* pResultado = bufferInt;
-				retorno = 0 ;
-				break ;
-			}
-			else
-			{
-				printf ( " % s " , mensajeError);
-				reintentos--;
-			}
-		} while (reintentos >= 0 );
-	}
-	return retorno;
-}
-
-
-
-
-
-
-
-
-
-int  utn_getCaracter ( char * pResultado, char * mensaje, char * mensajeError, char minimo, char maximo, int reintentos)
-{
-	int retorno = - 1 ;
-	char buffer;
-	if (pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >= 0 )
-	{
-		do
-		{
-			printf ( " % s " , mensaje);
-			fflush (stdin);
-			scanf ( " % c " , & buffer);
-			if (buffer >= minimo && buffer <= maximo)
-			{
-				* pResultado = buffer;
-				retorno = 0 ;
-				break ;
-			}
-			printf ( " % s " , mensajeError);
-			reintentos--;
-		} while (reintentos >= 0 );
-
-	}
-	return retorno;
-	
-}

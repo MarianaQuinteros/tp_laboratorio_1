@@ -24,77 +24,76 @@ int main ()
 	
 	
 	
-	
+	//ingresar los datos
 	
 	printf ("BIENVENIDO A LA CALCULADORA\n\n1.Ingresar 1er operando: \n");
 	scanf ("%f", &a);
-	 /*if (a == NULL && a ) {
-		print ("operando A no valido, ingrese un numero valido: ");
-		scanf ("%f", &a);
-	}
-	*/
-
 	
 	printf ("Ingresar 2do operando: \n");
 	scanf ("%f", &b);
 	
 	
-
+// separé los printf para poner los valores a cada una de las opciones
 	printf ("1. Calcular suma (%f+%f)", a,b);
 	printf ("\n2. Calcular resta (%f-%f)",a,b);
 	printf ("\n3. Calcular division (%f/%f)",a,b);
 	printf ("\n4. Calcular multiplicacion (%f*%f)",a,b);
-	printf ("\n5. Calcular factorial (%f !) y (%f !)\n",a,b);
-	printf ("INGRESE NUMERO DE OPERACIÓN A REALIZAR?: \n");
-	scanf ("%d", &operacion);
+	printf ("\n5. Calcular factorial (%f !) y factorial (%f !)\n",a,b);
 	
-	while (operacion <=1 && operacion >=5) {
-		
-		printf ("\nNUMERO DE OPERACION NO VALIDA, INGRESE UNA OPERACION DE 1 A 5:");
+	
+	
+	do
+	{
+		printf ("INGRESE NUMERO DE OPERACIÓN A REALIZARDE 1 A 5: ");
 		scanf ("%d", &operacion);
-		
-		}
+					
+	}while (operacion <1 || operacion >5);
 	
 	switch (operacion)
 	{
-		
+		//SUMAR
 		case 1: 
 		opsumar (a,b);
 		break;
 		
+		//RESTAR
 		case 2: 
 		oprestar (a,b);
 		break;
 		
-		case 3: 
-		opmultiplicar (a,b);
-		break;
 		
-		case 4: 
+		//DIVIDIR
+		case 3: 
 		respuesta = opdividir ( a, b, &resultado);
 		
 		if (respuesta == 0 ) 
 		{
-			printf ("El resultado de %f/%f es: %f\n", a,b,&resultado);
+			printf ("\nEl resultado de %f/%f es: %f\n", a,b,resultado);
 		}
 		else 
 		{
-			printf ("No es posible dividir por cero\n");
+			printf ("\nNo es posible dividir por cero\n");
 		}
 				
 		break;
+	
+		//MULTIPLICAR
+		case 4: 		
+		opmultiplicar (a,b);
+		break;
 		
+		//FACTORIAL A Y B
 		case 5:
 		 
 		respuesta = opfactorialA (a,&resultado) ;
 		
 				if (respuesta == 0 ) 
 		{
-			printf ("El factorial de %f es: %f\n", a,&resultado);
+			printf ("\nEl factorial de %f es: %f\n", a,resultado);
 		}
 		else 
 		{
-			printf ("No es posible calcular el factorial de %f\n",a);
+			printf ("\nNo es posible calcular el factorial de %f\n",a);
 		}
 		
 		
@@ -105,11 +104,11 @@ int main ()
 			
 			if (respuesta == 0 ) 
 		{
-			printf ("El factorial de %f es: %f\n", b,&resultado);
+			printf ("\nEl factorial de %f es: %f\n", b,resultado);
 		}
 		else 
 		{
-			printf ("No es posible calcular el factorial de %f\n",b);
+			printf ("\nNo es posible calcular el factorial de %f\n",b);
 		}
 		
 		
