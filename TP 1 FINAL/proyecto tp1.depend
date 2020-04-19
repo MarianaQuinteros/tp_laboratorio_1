@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1587259037 source:c:\users\maria\desktop\1b-primer-cuatrimestre-utn\clase 12\proyecto tp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
+1587257772 c:\users\maria\desktop\1b-primer-cuatrimestre-utn\clase 12\proyecto tp1\utn.h
+
+1587258311 source:c:\users\maria\desktop\1b-primer-cuatrimestre-utn\clase 12\proyecto tp1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
